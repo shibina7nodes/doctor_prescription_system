@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  d_name: MyString
+  d_gender: MyString
+  d_address: MyString
+  d_mobno: 1
+  d_specialize: MyString
+
+two:
+  d_name: MyString
+  d_gender: MyString
+  d_address: MyString
+  d_mobno: 1
+  d_specialize: MyString

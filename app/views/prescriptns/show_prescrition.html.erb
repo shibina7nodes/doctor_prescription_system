@@ -1,0 +1,25 @@
+ <p id="notice"><%= notice %></p>
+
+<p>
+ <strong>Prescription date:</strong>
+ <%= @pres.pres_date %>
+</p>
+
+<p>
+ <strong>Doctor Name:</strong>
+ <%= @pres.id %>
+</p>
+
+<p>
+ <strong>Patient Name:</strong>
+ <%= @pres.p_name %>
+</p>
+<p>
+ <strong>Patient Reason:</strong>
+ <%= @pres.patinet_reason %>
+</p>
+
+<button type="button" class="btn btn-success">
+<%= link_to 'Back', main_home_path %>
+</button>
+ 

@@ -1,0 +1,33 @@
+
+<div class="container" align = "center" style = "padding-top: 150px";>
+  <%= form_for(@patient) do |f| %>
+    <div class="form-group">
+      <%= f.label :"Patient Name:"  %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= f.text_field :p_name  %>
+    </div>
+    <div class="field">
+    <%= f.label :"Patient gender:" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.label :"Male", "Male", :value => "male"  %>
+    <%= f.radio_button :p_gender, "male" %>
+    <%= f.label :"Female", "Female", :value => "female" %>
+    <%= f.radio_button :p_gender, "female" %>
+  </div>
+    <div class="form-group">
+      <%= f.label :"Patient Address" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= f.text_field :p_address  %>
+    </div>
+    <div class="form-group">
+      <%= f.label :"Patient Age:"  %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= f.text_field :p_age  %>
+    </div>
+    <div class="form-group">
+      <%= f.label :"Patient MobileNo:"  %>
+      <%= f.text_field :p_mobno  %>
+    </div>
+    <br>
+     <%= f.submit "Add Patient", class: "btn btn-primary", data: {confirm: 'Successfully Added'} %>
+      <%= link_to "Back", main_home_path, class: "btn btn-success"%>
+  <% end %>
+</div>
+<!--<body background="/home/user/Downloads/p.jpg">
+</body>

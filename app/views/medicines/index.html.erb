@@ -1,0 +1,29 @@
+<html>
+<div align="left">
+    <%= link_to "<Back", main_home_path %>
+  </div>
+<h1 align="center">Medicine Details</h1>
+<body>
+
+  <div class="container">
+    <table class="table" >
+     <tr>
+      <b><td> Medicine Name: </td>
+      <td> Price: </td>
+      <td> Company Name: </td>
+      </tr>
+	   <% @medicine.each do |medicine| %>
+      <tr>
+      <td><%= medicine.medicine_name %></td>
+      <td><%= medicine.price %></td>  
+      <td><%= medicine.company_name %></td>
+   	  <td><%= link_to "Edit", edit_medicine_path(medicine) %></td>
+      <td><%= link_to "Delete", medicine, method: :delete, data: { confirm: 'Are you sure' } %> </td>
+    </tr>
+    <%end%>
+    </table>
+    
+    
+    </div>
+</body>
+</html>

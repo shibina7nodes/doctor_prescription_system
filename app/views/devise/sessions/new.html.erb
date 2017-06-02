@@ -1,0 +1,26 @@
+<html>
+<head>
+<h2 class='login_title text-left' >Login</h2>
+<hr>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-signin") do |f| %>
+  <span id="reauth-email" class="reauth-email"></span>
+
+  <p class="input_title">email</p>
+  <%= f.email_field :email, autofocus: true, class: "login_box", placeholder: "Email" %>
+
+
+  <p class="input_title">Password</p>
+  <%= f.password_field :password, autocomplete: "off", autofocus: true, class: "login_box", placeholder: "password"  %>
+
+  <br>
+
+  <%= f.check_box :remember_me %>
+  <%= f.label :remember_me %>
+
+  <br>
+  <%= render "devise/shared/links" %><br>
+  <%= f.submit "Log in", class: "btn btn-lg btn-primary" %>
+<% end %>
+
+</body>
+</html> 

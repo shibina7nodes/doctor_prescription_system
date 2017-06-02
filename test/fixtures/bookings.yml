@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  patients_id: one
+  doctors_id: one
+  b_date: 2017-05-29
+
+two:
+  patients_id: two
+  doctors_id: two
+  b_date: 2017-05-29

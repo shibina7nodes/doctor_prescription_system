@@ -1,0 +1,39 @@
+<html>
+<% if @patient.blank? %>
+  <h4>There are no patients containing the term <%= params[:search] %>.</h4>
+<% end %>
+<div align="left">
+    <%= link_to "<Back", main_home_path %>
+  </div>
+<h1 align="center">Patient Details</h1>
+<body>
+ <%= form_tag(patients_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Patients" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+  <div class="container">
+    <table class="table" >
+     <tr>
+      <b><td> Patient Name: </td>
+      <td> Patient Gender: </td>
+      <td> Patient Address: </td>
+      <td> Patient Age: </td>
+      <td> Patient Mobile number: </td></b>
+      </tr>
+	   <% @patient.each do |patient| %>
+      <tr>
+      <td><%= patient.p_name %></td>
+      <td><%= patient.p_gender %></td>  
+      <td><%= patient.p_address %></td>
+      <td><%= patient.p_age %></td>
+      <td><%= patient.p_mobno %></td> 
+   	  <td><%= link_to "Edit", edit_patient_path(patient) %></td>
+      <td><%= link_to "Delete", patient, method: :delete, data: { confirm: 'Are you sure' } %> </td>
+    </tr>
+    <%end%>
+    </table>
+    
+    
+    </div>
+</body>
+</html>

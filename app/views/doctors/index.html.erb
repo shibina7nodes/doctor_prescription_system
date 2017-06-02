@@ -1,0 +1,36 @@
+<html>
+<div align="left">
+    <%= link_to "<Back", main_home_path %>
+  </div>
+<h1 align="center">Doctor Details</h1>
+<body>
+
+  <div class="container">
+    <table class="table" >
+     <tr>
+      <b><td> Name: </td>
+      <td>  Gender: </td>
+      <td> Address: </td>
+      <td> Mobile number: </td>
+      <td> Specialization: </td>
+      <td> Email: </td></b>
+      </tr>
+	   <% @doctor.each do |doctor| %>
+      <tr>
+      <td><%= doctor.d_name %></td>
+      <td><%= doctor.d_gender %></td>  
+      <td><%= doctor.d_address %></td>
+      <td><%= doctor.d_mobno %></td>
+      <td><%= doctor.d_specialize %></td> 
+      <td><%= doctor.email %></td> 
+   	  <td><%= link_to "Edit", edit_doctor_path(doctor) %></td>
+      <td><%= link_to "Delete", doctor, method: :delete, data: { confirm: 'Are you sure' } %>
+      <td></td>
+    </tr>
+    <%end%>
+    </table>
+    
+    
+    </div>
+</body>
+</html>

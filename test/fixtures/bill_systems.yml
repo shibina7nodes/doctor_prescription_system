@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 1
+  bill_date: 2017-05-24
+  prescription_id: one
+
+two:
+  amount: 1
+  bill_date: 2017-05-24
+  prescription_id: two

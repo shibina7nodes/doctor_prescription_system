@@ -1,0 +1,25 @@
+<html>
+<div align="left">
+    <%= link_to "<Back", doctor_main_path %>
+  </div>
+<h1 align="center">Patients Details</h1>
+<body>
+
+  <div class="container">
+    <table class="table" >
+     <tr>
+      <b><td> Patient Id: </td>
+      <td> Patient Booking date: </td>
+      </tr>
+	   <% @list.each do |list| %>
+      <tr>
+      <td><%= list.patient_id %></td>
+      <td><%= list.b_date %></td>
+    </tr>
+    <%end%>
+    </table>
+    
+    
+    </div>
+</body>
+</html>

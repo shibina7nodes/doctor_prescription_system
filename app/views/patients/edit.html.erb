@@ -1,0 +1,37 @@
+<%= link_to "<Back", patients_path %>
+<h1>Update Patient details</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@patient) do |f| %>
+      <div class="form-group">
+      <%= f.label :"Patient Name:"  %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= f.text_field :p_name, class: "form-group"  %>
+    </div>
+    <div class="field">
+    <%= f.label :"Patient gender:" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.label :"Male", "Male", :value => "male"  %>
+    <%= f.radio_button :p_gender, "male" %>
+    <%= f.label :"Female", "Female", :value => "female" %>
+    <%= f.radio_button :p_gender, "female" %>
+  </div>
+    <div class="form-group">
+      <%= f.label :"Patient Address" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= f.text_field :p_address  %>
+    </div>
+    <div class="form-group">
+      <%= f.label :"Patient Age:"  %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= f.text_field :p_age  %>
+    </div>
+    <div class="form-group">
+      <%= f.label :"Patient MobileNo:"  %>
+      <%= f.text_field :p_mobno  %>
+    </div>
+    <br>
+      <br>
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+
+    
+  </div>
+</div>

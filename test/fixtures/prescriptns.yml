@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pres_date: 2017-05-24
+  patient: one
+  doctor: one
+  patient_reason: MyString
+  medicine: one
+
+two:
+  pres_date: 2017-05-24
+  patient: two
+  doctor: two
+  patient_reason: MyString
+  medicine: two
