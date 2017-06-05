@@ -1,7 +1,4 @@
 <html>
-<div align="left">
-    <%= link_to "<Back", main_home_path %>
-  </div>
 <h1 align="center">Booking Details</h1>
 <body>
 
@@ -12,7 +9,7 @@
       <td> Doctor id: </td>
       <td> Booking Date: </td></b>
       </tr>
-	   <%= @book.each do |book| %>
+	   <% @book.each do |book| %>
       <tr>
       <td><%= book.patient_id %></td>
       <td><%= book.doctor_id %></td>  

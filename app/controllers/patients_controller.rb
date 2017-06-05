@@ -7,7 +7,7 @@ class PatientsController < ApplicationController
   def create
 		@patient = Patient.new(patient_params)
 		if @patient.save
-			  flash[:success] = "Added successfully"
+			  flash[:notice] = "Added successfully"
     		redirect_to new_patient_path
   		end
   	end
