@@ -32,7 +32,7 @@ class PatientsController < ApplicationController
         	format.json { render :show, status: :ok, location: @patient }
      		else
         	format.html { render :edit }
-         	format.json { render json: @article.errors, status: :unprocessable_entity }
+         	format.json { render json: @patient.errors, status: :unprocessable_entity }
       	end
     end
 	end

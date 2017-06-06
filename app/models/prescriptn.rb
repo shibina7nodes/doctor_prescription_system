@@ -5,7 +5,10 @@ class Prescriptn < ApplicationRecord
   has_many :medicines
   has_many :prescriptn_details, dependent: :destroy
   accepts_nested_attributes_for :prescriptn_details
-
+  validates :pres_date, presence: { message: "prescription date must be given please" }
+  validates :patient_id, presence: { message: "patient id must be given please" }
+  validates :doctor_id, presence: { message: "doctor id must be given please" }
+   validates :patient_reason, presence: { message: "Patient reason must be given please" }
   def medicines_for_form
     collection = medicines.where(medicine_id: id)
     collection.any?collection:medicines.build

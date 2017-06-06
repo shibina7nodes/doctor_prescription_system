@@ -34,7 +34,7 @@ class DoctorsController < ApplicationController
 
   def destroy
     @doctor = Doctor.find(params[:id])
-      @doctor.destroy
+    @doctor.destroy
       redirect_to doctors_path
   end 
 

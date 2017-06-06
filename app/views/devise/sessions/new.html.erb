@@ -1,61 +1,17 @@
-<html>
-<head>
-<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
-  <!-- Overlay -->
-  <div class="overlay"></div>
-
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
-    <li data-target="#bs-carousel" data-slide-to="1"></li>
-    <li data-target="#bs-carousel" data-slide-to="2"></li>
-  </ol>
-  
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item slides active">
-      <div class="slide-1"></div>
-      <div class="hero">
-        <hgroup>
-            <h1>We are creative</h1>        
-            <h3>Welcome to Doctor Prescription System</h3>
-        </hgroup>
-       
-      </div>
-    </div>
-    <div class="item slides">
-      <div class="slide-2"></div>
-      <div class="hero">        
-        <hgroup>
-            <h1>We are smart</h1>        
-            <h3>Welcome to Doctor Prescription System</h3>
-        </hgroup>       
-        
-      </div>
-    </div>
-    <div class="item slides">
-      <div class="slide-3"></div>
-      <div class="hero">        
-        <hgroup>
-            <h1>We are amazing</h1>        
-            <h3>Welcome to Doctor Prescription System</h3>
-        </hgroup>
-       
-      </div>
-    </div>
-  </div> 
-</div>
-<h2 class='login_title text-left' >Login</h2>
-<hr>
+<body id="body_logo">
+ <main class="login_content">
+   <header class="login_header">
+   <div class="login_logo">
+     <%= image_tag("LOGIN-BUTTON", size: "300x102") %>
+   </div> <h1 class="login_title"> Log in using <br> user id & password </header>
+ </main>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-signin") do |f| %>
   <span id="reauth-email" class="reauth-email"></span>
 
-  <p class="input_title">email</p>
-  <%= f.email_field :email, autofocus: true, class: "login_box", placeholder: "Email" %>
-
-
-  <p class="input_title">Password</p>
-  <%= f.password_field :password, autocomplete: "off", autofocus: true, class: "login_box", placeholder: "password"  %>
+  <%= f.label :"Email Id:" %>
+  <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email", id: "txtbox" %>
+  <%= f.label :"Password" %>
+  <%= f.password_field :password, autocomplete: "off", autofocus: true, class: "form-control", placeholder: "password", id: "txtbox"  %>
 
   <br>
 
@@ -64,7 +20,7 @@
 
   <br>
   <%= render "devise/shared/links" %><br>
-  <%= f.submit "Log in", class: "btn btn-lg btn-primary" %>
+  <%= f.submit "Log in", class: "button button_login" %>
 <% end %>
 
 </body>

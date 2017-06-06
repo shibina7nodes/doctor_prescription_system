@@ -1,6 +1,12 @@
 class Booking < ApplicationRecord
-  belongs_to :patient
+  belongs_to :patient 
   belongs_to :doctor
+  validates :patient_id, presence: { message: "patient id must be given please" }
+  validates :doctor_id, presence: { message: "doctor id must be given please" }
+  validates :b_date, presence: { message: "Booking date must be given please" }
+
+
+
 
   def detail(eid)
     pat = Doctor.where(email: eid) 
