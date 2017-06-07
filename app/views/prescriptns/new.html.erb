@@ -6,7 +6,7 @@
   </div>
     <div class="form-group">
       <%= f.label :"Doctor Name:"  %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= f.select(:doctor_id @doctor) do %>
+      <%= f.select(:doctor_id, @doctor) do %>
     <% @doctor.each do |doctor| %>
       <%= content_tag(:option, doctor.d_name, value: doctor.id, required: true, oninvalid: "this.setCustomValidity('Name cant be blank')", oninput: "setCustomValidity('')") %>
     <% end %>
