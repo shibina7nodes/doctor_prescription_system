@@ -4,21 +4,21 @@
       <%= f.label :"Doctor Name:"  %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <%= f.select(:doctor_id) do %>
     <% @doctor.each do |doctor| %>
-      <%= content_tag(:option, doctor.d_name, value: doctor.id) %>
+      <%= content_tag(:option, doctor.d_name, value: doctor.id, required: true, oninvalid: "this.setCustomValidity('Name cant be blank')", oninput: "setCustomValidity('')") %>
     <% end %>
   <% end %>
     </div>
-    <div class="field">
+    <div class="form-group">
     <%= f.label :"Patient Name:" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <%= f.select(:patient_id) do %>
     <% @patient.each do |patient| %>
-      <%= content_tag(:option, patient.p_name, value: patient.id) %>
+      <%= content_tag(:option, patient.p_name, value: patient.id, required: true, oninvalid: "this.setCustomValidity('Patient Name cant be blank')", oninput: "setCustomValidity('')") %>
     <% end %>
   <% end %>
    </div>
    <div class="form-group">
     <%= f.label :"Booking Date: " %>
-    <%= f.date_field :b_date %>
+    <%= f.date_field :b_date, required: true, oninvalid: "this.setCustomValidity('Booking date cant be blank')", oninput: "setCustomValidity('')"%>
     </div>
     <%= f.submit "Create Booking", class: "btn btn-primary" %>
   <% end %>
