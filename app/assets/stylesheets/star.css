@@ -1,9 +1,9 @@
 body {
-  background:url('doc.jpg');
+  background-image: url('doc.jpg');
 
 }
 #body_logo{
-    background:url('login.jpg');
+    background-image: url('login.jpg');
     padding:50px;
     background-size: 1500px 1060px;
     }

@@ -3,7 +3,7 @@
   <%= form_for(@doctor ) do |f| %>
     <div class="form-group">
       <%= f.label :"Doctor   Name:"  %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= f.text_field :d_name  %>
+      <%= f.text_field :d_name, oninvalid: "this.setCustomValidity('Name cant be blank')", oninput: "setCustomValidity('')"  %>
     </div>
     <div class="field">
     <%= f.label :"Doctor gender:" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
