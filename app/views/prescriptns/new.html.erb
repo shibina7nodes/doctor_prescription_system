@@ -2,27 +2,27 @@
   <%= nested_form_for(@prescriptn) do |f| %>
   <div class="form-group">
     <%= f.label :"Prescription Date:" %>
-    <%= f.date_field :pres_date %>
+    <%= f.date_field :pres_date, required: true, oninvalid: "this.setCustomValidity('Date cant be blank')", oninput: "setCustomValidity('')" %>
   </div>
     <div class="form-group">
       <%= f.label :"Doctor Name:"  %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= f.select(:doctor_id) do %>
+      <%= f.select(:doctor_id @doctor) do %>
     <% @doctor.each do |doctor| %>
-      <%= content_tag(:option, doctor.d_name, value: doctor.id) %>
+      <%= content_tag(:option, doctor.d_name, value: doctor.id, required: true, oninvalid: "this.setCustomValidity('Name cant be blank')", oninput: "setCustomValidity('')") %>
     <% end %>
   <% end %>
     </div>
     <div class="field">
     <%= f.label :"Patient Name:" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= f.select(:patient_id) do %>
+      <%= f.select(:patient_id, @patient) do %>
     <% @patient.each do |patient| %>
-      <%= content_tag(:option, patient.p_name, value: patient.id) %>
+      <%= content_tag(:option, patient.p_name, value: patient.id, required: true, oninvalid: "this.setCustomValidity('Patient Name cant be blank')", oninput: "setCustomValidity('')") %>
     <% end %>
   <% end %>
   </div>
   <div class="form-group">
     <%= f.label :"Patient reason:" %>
-    <%= f.text_field :patient_reason %>
+    <%= f.text_field :patient_reason, required: true, oninvalid: "this.setCustomValidity('reason cant be blank')", oninput: "setCustomValidity('')" %>
   </div>
     <div class="form-group">
     <h4>Prescription details</h4>
@@ -30,13 +30,13 @@
       <div class = "prescriptn_detail_fields" id="tasks" >
        <div class = "field">
         <%= prescriptn_detail.label :"Medicine_name" %>
-        <%= prescriptn_detail.text_field :medicine_name %>
+        <%= prescriptn_detail.text_field :medicine_name, required: true, oninvalid: "this.setCustomValidity('Medicine Name cant be blank')", oninput: "setCustomValidity('')" %>
         <%= prescriptn_detail.label :"Medicine count" %>
-        <%= prescriptn_detail.text_field :medicine_count %>
+        <%= prescriptn_detail.text_field :medicine_count, required: true, oninvalid: "this.setCustomValidity('count cant be blank')", oninput: "setCustomValidity('')" %>
         <%= prescriptn_detail.label :"Medicine days" %>
-        <%= prescriptn_detail.text_field :days %>
+        <%= prescriptn_detail.text_field :days, required: true, oninvalid: "this.setCustomValidity('days cant be blank')", oninput: "setCustomValidity('')" %>
         <%= prescriptn_detail.label :"Medicine times" %>
-        <%= prescriptn_detail.text_field :tyms %>
+        <%= prescriptn_detail.text_field :tyms, required: true, oninvalid: "this.setCustomValidity('Times cant be blank')", oninput: "setCustomValidity('')" %>
      
        </div>
       </div>

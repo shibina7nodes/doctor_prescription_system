@@ -5,7 +5,7 @@ def new
 	@prescriptn.prescriptn_details.build
 	@patient = Patient.all
 	@doctor = Doctor.all
-	@medicines = Medicine.all
+	# @medicines = Medicine.all
 	# @prescriptn = Prescriptn_detail.build
 end
 

@@ -2,7 +2,7 @@
   <%= form_for(@book) do |f| %>
     <div class="form-group">
       <%= f.label :"Doctor Name:"  %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= f.select(:doctor_id) do %>
+      <%= f.select(:doctor_id, @doctor) do %>
     <% @doctor.each do |doctor| %>
       <%= content_tag(:option, doctor.d_name, value: doctor.id, required: true, oninvalid: "this.setCustomValidity('Name cant be blank')", oninput: "setCustomValidity('')") %>
     <% end %>
@@ -10,7 +10,7 @@
     </div>
     <div class="form-group">
     <%= f.label :"Patient Name:" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= f.select(:patient_id) do %>
+      <%= f.select(:patient_id, @patient) do %>
     <% @patient.each do |patient| %>
       <%= content_tag(:option, patient.p_name, value: patient.id, required: true, oninvalid: "this.setCustomValidity('Patient Name cant be blank')", oninput: "setCustomValidity('')") %>
     <% end %>
