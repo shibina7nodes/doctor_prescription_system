@@ -18,7 +18,4 @@ test:
 
 production:
   <<: *default
-  database: appgaffe_production
-  username: appgaffe
-  password: <%= ENV['APPGAFFE_DATABASE_PASSWORD'] %>
-
+  database: doctor_system_development

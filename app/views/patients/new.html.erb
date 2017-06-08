@@ -15,26 +15,26 @@
   <%= form_for(@patient) do |f| %>
     <div class="form-group">
       <%= f.label :"Patient Name:"  %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= f.text_field :p_name  %>
+      <%= f.text_field :p_name, required: true, oninvalid: "this.setCustomValidity('Name cant be blank')", oninput: "setCustomValidity('')"  %>
     </div>
     <div class="field">
     <%= f.label :"Patient gender:" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <%= f.label :"Male", "Male", :value => "male"  %>
+    <%= f.label :"Male", "Male", :value => "male", required: true, oninvalid: "this.setCustomValidity('gender required')", oninput: "setCustomValidity('')"   %>
     <%= f.radio_button :p_gender, "male" %>
     <%= f.label :"Female", "Female", :value => "female" %>
-    <%= f.radio_button :p_gender, "female" %>
+    <%= f.radio_button :p_gender, "female", required: true, oninvalid: "this.setCustomValidity('gender required')", oninput: "setCustomValidity('')"  %>
   </div>
     <div class="form-group">
       <%= f.label :"Patient Address" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= f.text_field :p_address  %>
+      <%= f.text_field :p_address, required: true, oninvalid: "this.setCustomValidity('Address cant be blank')", oninput: "setCustomValidity('')"   %>
     </div>
     <div class="form-group">
       <%= f.label :"Patient Age:"  %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= f.text_field :p_age  %>
+      <%= f.text_field :p_age, required: true, oninvalid: "this.setCustomValidity('Age cant be blank')", oninput: "setCustomValidity('')"  %>
     </div>
     <div class="form-group">
       <%= f.label :"Patient MobileNo:"  %>
-      <%= f.text_field :p_mobno  %>
+      <%= f.text_field :p_mobno, required: true, oninvalid: "this.setCustomValidity('Mobile number cant be blank')", oninput: "setCustomValidity('')"  %>
     </div>
     <br>
      <%= f.submit "Add Patient", class: "btn btn-primary" %>

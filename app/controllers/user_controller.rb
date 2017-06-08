@@ -5,6 +5,5 @@ class UserController < ApplicationController
 	def doctor_main
 		
 	end
-
 	
 end

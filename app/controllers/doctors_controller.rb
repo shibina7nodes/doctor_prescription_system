@@ -6,6 +6,7 @@ class DoctorsController < ApplicationController
   def create
     @doctor = Doctor.new(doctor_params)
     if @doctor.save
+      DoctorNotifierMailer.send_signup_email(@doctor).deliver
       flash[:notice] = "Added successfully"
       redirect_to new_doctor_path
     end

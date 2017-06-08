@@ -3,30 +3,30 @@
   <%= form_for(@doctor ) do |f| %>
     <div class="form-group">
       <%= f.label :"Doctor   Name:"  %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= f.text_field :d_name, oninvalid: "this.setCustomValidity('Name cant be blank')", oninput: "setCustomValidity('')"  %>
+      <%= f.text_field :d_name, required: true, oninvalid: "this.setCustomValidity('Name cant be blank')", oninput: "setCustomValidity('')"  %>
     </div>
     <div class="field">
     <%= f.label :"Doctor gender:" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <%= f.label :"Male", "Male", :value => "male"  %>
-    <%= f.radio_button :d_gender, "male" %>
+    <%= f.radio_button :d_gender, "male", required: true, oninvalid: "this.setCustomValidity('gender required')", oninput: "setCustomValidity('')"  %>
     <%= f.label :"Female", "Female", :value => "female" %>
-    <%= f.radio_button :d_gender, "female" %>
+    <%= f.radio_button :d_gender, "female", required: true, oninvalid: "this.setCustomValidity('gender required')", oninput: "setCustomValidity('')"  %>
   </div>
     <div class="form-group">
       <%= f.label :"Doctor Address" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= f.text_field :d_address  %>
+      <%= f.text_field :d_address, required: true, oninvalid: "this.setCustomValidity('Address cant be blank')", oninput: "setCustomValidity('')"  %>
     </div>
     <div class="form-group">
       <%= f.label :"Doctor MobileNo:"  %>
-      <%= f.text_field :d_mobno  %>
+      <%= f.text_field :d_mobno, required: true, oninvalid: "this.setCustomValidity('Mobile number cant be blank')", oninput: "setCustomValidity('')"  %>
     </div>
     <div class="form-group">
       <%= f.label :"Doctor Specialization:"  %>
-      <%= f.text_field :d_specialize  %>
+      <%= f.text_field :d_specialize, required: true, oninvalid: "this.setCustomValidity('Doctor Specialization cant be blank')", oninput: "setCustomValidity('')"  %>
     </div>
     <div class="form-group">
       <%= f.label :"Email Id:"  %>
-      <%= f.email_field :email  %>
+      <%= f.email_field :email, required: true, oninvalid: "this.setCustomValidity('Email  cant be blank')", oninput: "setCustomValidity('')"  %>
     <br>
      <%= f.submit "Add doctor", class: "btn btn-primary" %>
   <% end %>
