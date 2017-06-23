@@ -12,6 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+
+//= require jquery_nested_form
+
+//= require private_pub
+//= require websocket_rails/main
+
+//= require chat
 //= require turbolinks
 //= require_tree .
-//= require jquery_nested_form
+
+console.log("fad")

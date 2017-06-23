@@ -6,7 +6,10 @@ class DoctorsController < ApplicationController
   def create
     @doctor = Doctor.new(doctor_params)
     if @doctor.save
-      DoctorNotifierMailer.send_signup_email(@doctor).deliver
+      generated_password = Devise.friendly_token.first(8)
+      user = User.create!(:email => @doctor.email, :password => generated_password)
+      user.add_role(:doctor)
+      DoctorNotifierMailer.send_signup_email(@doctor.email,generated_password).deliver_now
       flash[:notice] = "Added successfully"
       redirect_to new_doctor_path
     end

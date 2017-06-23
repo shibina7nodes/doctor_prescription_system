@@ -1,15 +1,25 @@
 Rails.application.routes.draw do
-  devise_for :user
+  devise_for :users
   resources :patients
   resources :medicines
   resources :users
   resources :doctors
   resources :prescriptns
   resources :bookings
+  resources :conversations do
+   resources :messages
+ end
+    resources :conversations 
+     resources :messages
+  # resources :sessions, only: [:new, :create]
+
+  # root 'sessions#new'
    root "user#wel"
    get "/main_home" => "patients#main_home"
+   get "/chatbox" => "user#chatbox"
    get "/doctor_main" => "user#doctor_main"
    get "/patients_notification" => "bookings#patients_notification"
    get "show_prescrition/:id" => "prescriptns#show_prescrition", as: :show_prescrition
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+   mount ActionCable.server => '/cable'
 end

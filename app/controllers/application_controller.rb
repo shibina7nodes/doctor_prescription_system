@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   layout :layout_by_resource
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  before_filter :set_last_request_at 
+    
   def configure_permitted_parameters
     update_attrs = [:password, :password_confirmation, :current_password]
     devise_parameter_sanitizer.permit :account_update, keys: update_attrs
@@ -43,4 +44,11 @@ class ApplicationController < ActionController::Base
       "application"
     end
   end
+
+  private 
+
+  def set_last_request_at 
+    current_user.update_attribute(:current_sign_in_at, Time.now) if 
+    user_signed_in? 
+  end 
 end

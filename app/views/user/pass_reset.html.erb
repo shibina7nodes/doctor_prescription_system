@@ -1,0 +1,20 @@
+<div class="container" align = "center" style = "padding-top: 150px";>
+  <%= form_for(@doctor ) do |f| %>
+    <div class="form-group">
+      <%= f.label :"Current Password:"  %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= f.text_field :d_name, required: true, oninvalid: "this.setCustomValidity('Name cant be blank')", oninput: "setCustomValidity('')"  %>
+    </div>
+    <div class="form-group">
+      <%= f.label :"Doctor Address" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= f.text_field :d_address, required: true, oninvalid: "this.setCustomValidity('Address cant be blank')", oninput: "setCustomValidity('')"  %>
+    </div>
+    <div class="form-group">
+      <%= f.label :"Doctor MobileNo:"  %>
+      <%= f.text_field :d_mobno, required: true, oninvalid: "this.setCustomValidity('Mobile number cant be blank')", oninput: "setCustomValidity('')"  %>
+    </div>
+    <br>
+     <%= f.submit "Add doctor", class: "btn btn-primary" %>
+  <% end %>
+</div>
+<!--<body background="/home/user/Downloads/p.jpg">
+</body>

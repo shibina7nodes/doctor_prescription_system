@@ -1,6 +1,95 @@
-<div class="span1">
-        <i class="icon-eye-open icon-white"></i>
-        <span><strong><%= link_to "Patients notification", patients_notification_path, class: "btn btn-primary" %></strong></span>        	
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
 
-           	
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.send{
+  color:green;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.docname{
+  font-size: 20px;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+<div class="span1" style="width:50px;height:50px;">
+  <i class="icon-eye-open icon-white"></i>
+  <span><strong><%= link_to "Patients notification", patients_notification_path, class: "btn btn-primary" %></strong></span>        	
 </div>
+<div class="span1" style="width:50px;height:50px;>
+	<i class="icon-eye-open icon-white"></i>
+  <span><%= link_to "Password Change", edit_user_registration_path, class: "btn btn-success" %></span>        	
+</div>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <%= link_to "Start Chat", messages_url, class: "btn btn-success btn-xs start-conversation"%>
+  <p class="docname"><br><b>Registered Doctors</b></p>
+  <% @user.each do |user| %>
+  <% if current_user.email != user.email %>
+  <div class="docname">
+  
+  <%= user.name %> 
+  <!-- <input type="submit" name="msg" value="Send message", class="btn btn-warning" /><br/> -->
+  <%= link_to "Send message", "#", class: "btn btn-warning start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %><br/>
+  </div>
+  <% end %>
+  <% end %>	
+  <hr>
+</div>
+<span class="btn btn-info" style="font-size:20px;cursor:pointer;width:70px;" onclick="openNav();"> Chat</span>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "300px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+     
+</body>
+</html> 
+
